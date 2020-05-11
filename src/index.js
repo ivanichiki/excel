@@ -1,3 +1,3 @@
 import './module.js'
-
-console.log('Hi')
+import './scss/index.scss'
+console.log('Hi sasd')
