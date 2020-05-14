@@ -64,12 +64,14 @@
     right: 0;
     bottom: 0;
     opacity: 0;
+    user-select: none;
     background: $primary-color;
     &:hover {
-      opacity: 1;
+      opacity: 1!important;
     }
   }
   .col-resize {
+    z-index: 1;
     top: 0;
     width: 4px;
     &:hover {
@@ -77,6 +79,7 @@
     }
   }
   .row-resize {
+    z-index: 1;
     left: 0;
     height: 4px;
     &:hover {  

@@ -2,15 +2,15 @@ const CODES = {
   A: 65,
   Z: 90
 }
-function createCell() {
+function createCell(_, index) {
   return `
-    <div class='cell' contenteditable></div>
+    <div class='cell' data-col='${index}' contenteditable></div>
   `
 }
 
-function createCol(col) {
+function createCol(col, index) {
   return `
-  <div class='column'>
+  <div class='column' data-col='${index}' data-type="resizable">
     ${col}
     <div class="col-resize" data-resize="col"></div>
   </div> 
@@ -22,7 +22,7 @@ function createRow(content, index) {
    `<div class="row-resize" data-resize="row"></div>`:
    ''
   return `
-  <div class='row'>
+  <div class='row' data-type="resizable">
     <div class='row-info'>
     ${index}
     ${resizer}
