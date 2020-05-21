@@ -5,12 +5,12 @@ class Dom {
     selector
   }
   text(text) {
-    if (typeof text === 'string') {
+    if (typeof text !== 'undefined') {
       this.$el.textContent = text
       return this
     }
     if (this.$el.tagName.toLowerCase() === 'input') {
-      return this.$el.valut.trim()
+      return this.$el.value.trim()
     }
     return this.$el.textContent.trim()
   }
@@ -20,6 +20,12 @@ class Dom {
       return this
     }
     return this.$el.outerHTML.trim()
+  }
+  getStyles(styles = []) {
+    return styles.reduce((res, s)=> {
+      res[s] = this.$el.style[s]
+      return res
+    }, {})
   }
   clear() {
     this.html('')
@@ -51,6 +57,12 @@ class Dom {
     }
     this.$el.append(node)
     return this
+  }
+  attr(name, value) {
+    if (value) {
+      this.$el.setAttribute(name, value)
+    }
+    return this.$el.getAttribute(name)
   }
   closest(selector) {
     return $(this.$el.closest(selector))
