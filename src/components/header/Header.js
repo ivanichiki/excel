@@ -20,7 +20,9 @@ export class Header extends ExcelComponent {
           </div>
           <div class="button">
             <i class="material-icons">exit_to_app</i>
-          </div>`
+          </div>
+        </div>
+`
   }
   onInput(event) {
     const $target = $(event.target)
