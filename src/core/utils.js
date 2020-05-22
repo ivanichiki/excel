@@ -54,3 +54,7 @@ export function debounce(fn, wait) {
     timeout = setTimeout(later, wait);
   }
 }
+
+export function clon(obj) {
+  return JSON.parse(JSON.stringify((obj)))
+}
